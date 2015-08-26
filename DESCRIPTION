@@ -1,4 +1,4 @@
-Package: skipgrams
+Package: skipgram
 Title: Builds regular and skip n-gram from (optionally compressed) character list (optionally excluding content from filter)
 Version: 0.0.1.0000
 Authors@R: person("Marc", "Borowczak", email = "borowczak.marc@gmail.com", role = c("aut", "cre"))
