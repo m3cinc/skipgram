@@ -9,7 +9,7 @@
 #' skip_ngram(as.character(citation())) produces a unigram of citation in list x
 #' skip_ngram(string,3L) produces trigram of string in list x
 #' skip_ngram(string,2L,3L,1L,badwords) produces skip3-bigram in list x corresponding to [word X X X word] from a compressed list, excludes tokens in badwords list
-skip_ngram <- compiler::cmpfun (skip_ngram5 <- function( x,  n = 1L, skip = 0L, cflag = 0L, filter = NULL) {    
+skip_ngram <- compiler::cmpfun (function( x,  n = 1L, skip = 0L, cflag = 0L, filter = NULL) {    
         stopifnot( is.integer( n ), is.finite( n ), n > 0L, is.integer( skip ), is.finite( skip ), skip >-1L, is.integer( cflag ), is.finite( cflag ), cflag > -1L)
         if ( cflag > 0L ) { x %>% memDecompress( "g", asChar = TRUE ) %>% strsplit( "\n" ) %>% unlist -> x }      # decompress
         if ( n == 1L && skip > 0L ) { skip <- 0L } # ignore the skip
@@ -24,6 +24,6 @@ skip_ngram <- compiler::cmpfun (skip_ngram5 <- function( x,  n = 1L, skip = 0L, 
                           sapply(1:( length( tokens ) - n - skip -1L ), function(i) stri_join( c( tokens[i], tokens[(i + skip + 1L):(i + skip + n - 1L)]), collapse = " ")) } }
 } , options = list( optimize = 3) )
 
-#  string <- c( "This scope of this report is to perform exploratory data analysis on the sample data ",
-#  "set. The specific data set contains English, German, Russian and Finnish language data sets for",
-#  " exploration. This milestone report focuses on exploring English language datasets within the specific ",
+# string <- c( "This scope of this report is to perform exploratory data analysis on the sample data ",
+# "set. The specific data set contains English, German, Russian and Finnish language data sets for",
+# " exploration. This milestone report focuses on exploring English language datasets within the specific ")

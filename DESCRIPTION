@@ -5,7 +5,10 @@ Authors@R: person("Marc", "Borowczak", email = "borowczak.marc@gmail.com", role 
 Description: This package will build regular n-gram and skip-gram with specified skip, and return a named integer vector,
     from a list of characters, and optionally can filter out undesired vocabulary if provided by the filter argument. 
     The package can optionnaly accept g-compressed list of characters when cflag is set to 1L.
-Depends: R (>= 3.2.1)
+Depends: R (>= 3.2.1),
+    compiler (>= 3.2),
+    stringi  (>= 0.5-5),
+    magrittr (>= 1.5)
 License: GPL-3 
 LazyData: true
 Imports:
