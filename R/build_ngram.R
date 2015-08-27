@@ -13,7 +13,6 @@
 #' build_ngram(string,,,3L) builds up to trigram of string in list x no skipgrams generated
 #' build_ngram(string,,,3L,1L,1L,badwords) builds up to trigram of string in list x corresponding to [word X X word] from a compressed list, excludes tokens in badwords character vector
 build_ngram <- compiler::cmpfun (function (x, gramname, gramdir, elimdir , maxn = 1L, sflag = FALSE, cflag = FALSE, filter = NULL) {
-        require(stringi,magrittr)
         stopifnot( is.integer( maxn ), is.finite( maxn ), maxn > 0L, is.logical( cflag ), is.logical( sflag ) )
         if ( cflag == TRUE ) { x %>% memDecompress( "g", asChar = TRUE ) %>% strsplit( "\n" ) %>% unlist -> x }      # decompress
         for (n in 1L:maxn) {
