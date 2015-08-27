@@ -10,8 +10,8 @@
 #' skip_ngram(string,3L) produces trigram of string in list x
 #' skip_ngram(string,2L,3L,1L,badwords) produces skip3-bigram in list x corresponding to [word X X X word] from a compressed list, excludes tokens in badwords list
 skip_ngram <- compiler::cmpfun (function( x,  n = 1L, skip = 0L, cflag = FALSE, filter = NULL) {
-        require(stringi,magrittr)
-        stopifnot( is.integer( n ), is.finite( n ), n > 0L, is.integer( skip ), is.finite( skip ), skip >-1L, is.logical( cflag ) )
+        require( stringi ) ; require( magrittr )
+        stopifnot( is.integer( n ), is.finite( n ), n > 0L, is.integer( skip ), is.finite( skip ), skip > -1L, is.logical( cflag ) )
         if ( cflag == TRUE ) { x %>% memDecompress( "g", asChar = TRUE ) %>% strsplit( "\n" ) %>% unlist -> x }      # decompress
         if ( n == 1L && skip > 0L ) { skip <- 0L } # ignore the skip
         stri_split_boundaries <- stringi::stri_split_boundaries 
