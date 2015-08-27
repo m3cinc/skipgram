@@ -4,7 +4,7 @@
 \alias{skip_ngram}
 \title{skip_ngram}
 \usage{
-skip_ngram(x, n = 1L, skip = 0L, cflag = 0L, filter = NULL)
+skip_ngram(x, n = 1L, skip = 0L, cflag = FALSE, filter = NULL)
 }
 \arguments{
 \item{x}{character list, possibly compressed}
@@ -13,7 +13,7 @@ skip_ngram(x, n = 1L, skip = 0L, cflag = 0L, filter = NULL)
 
 \item{skip}{integer, the number of tokens to skip over (0L for simple gram, 1L for one skip, i.e [token X token]), note skip is ignored, set to 0L, on unigrams!}
 
-\item{cflag}{integer, 1L if compressed string x is input}
+\item{cflag}{logical, TRUE indicates compressed string x is input}
 
 \item{filter}{is an optional character vector dictionary containing tokens to exclude, omit if no filter is supplied}
 }
