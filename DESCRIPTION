@@ -1,6 +1,6 @@
 Package: skipgram
 Title: Builds regular and skip n-gram from (optionally compressed) character list (optionally excluding content from filter)
-Version: 0.0.1.1000
+Version: 0.0.1.7000
 Authors@R: person("Marc", "Borowczak", email = "borowczak.marc@gmail.com", role = c("aut", "cre"))
 Description: This package will build regular n-gram and skip-gram with specified skip, and return a named integer vector,
     from a list of characters, and optionally can filter out undesired vocabulary if provided by the filter argument. 
@@ -9,11 +9,13 @@ Depends: R (>= 3.2.1),
     compiler (>= 3.2),
     stringi  (>= 0.5-5),
     magrittr (>= 1.5),
-    httr     (>= 1.0.0)
+    httr     (>= 1.0.0),
+    pbapply  (>= 1.1-1)
 License: GPL-3 
 LazyData: true
 Imports:
     compiler (>= 3.2),
     stringi  (>= 0.5-5),
     magrittr (>= 1.5),
-    httr     (>= 1.0.0)
+    httr     (>= 1.0.0),
+    pbapply  (>= 1.1-1)

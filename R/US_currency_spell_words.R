@@ -10,6 +10,6 @@ US_currency_spell_words <- compiler::cmpfun ( function( x ) {
                                     "&number=", x,
                                     "&type=1",
                                     "&locale=en_US" ) ), as = "text" ) -> result
-        result %<>% gsub('(<div class="well">)((\\S*\\s*)*)(<\\/div>)','\\2',.,ignore.case=TRUE,perl=TRUE,useBytes=TRUE)
-        setNames(x,result)
+        result %<>% gsub('(<div class="well">)((\\S*\\s*)*)(<\\/div>)','\\2',. ,ignore.case = TRUE, perl = TRUE, useBytes = TRUE )
+        setNames( x, result )
 }, options = list( optimize = 3) )
