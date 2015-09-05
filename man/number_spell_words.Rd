@@ -2,7 +2,7 @@
 % Please edit documentation in R/number_spell_words.R
 \name{number_spell_words}
 \alias{number_spell_words}
-\title{US_number_spell_words}
+\title{number_spell_words}
 \usage{
 number_spell_words(x, l = "en_US")
 }
@@ -13,7 +13,7 @@ number_spell_words(x, l = "en_US")
 x as named double (name is the number_spell_word)
 }
 \description{
-US_number_spell_words
+number_spell_words
 }
 \examples{
 number_spell_words(101) returns a named integer 101, name="one hundred one"

@@ -1,5 +1,5 @@
 #' number_spell_words 
-#' @param x douuble numeric
+#' @param x a character string to represent an integer numeric
 #' @return x as named double (name is the number_spell_word) 
 #' @examples 
 #' number_spell_words(101) returns a named integer 101, name="one hundred one"

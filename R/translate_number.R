@@ -8,7 +8,7 @@ translate_number <- compiler::cmpfun(function ( x ) {
         stri_split_boundaries <- stringi::stri_split_boundaries 
         stri_join <- stringi::stri_join  
         stri_flatten <- stringi::stri_flatten
-        number_spell_words <- skipgram::number_spell_words
+        toWords <- skipgram::toWords
         options <- stringi::stri_opts_brkiter( type = "word", skip_word_none = TRUE, skip_word_number = FALSE )
         if ( length( grep( "([#0-9\\.])",x , perl = TRUE, fixed = FALSE, value = FALSE ) ) == 0L ) { return( x ) } # no number or # character
         # so we have possibly # or digits with possible .
@@ -29,7 +29,7 @@ translate_number <- compiler::cmpfun(function ( x ) {
         if ( length( tokens ) == 1L) { x <- tokens[length(tokens)] ; return( x ) }      # Empty vector since no word or number of tokens < n  
         change_tokens <- grep( "([0-9]){1,8}", tokens, perl = TRUE, value = FALSE )
         if ( length( change_tokens ) > 0L ) { tokens[change_tokens] <- sapply(change_tokens, function(i) {
-                        tokens[i] %<>% gsub( "([0-9]){1,}" , as.character(names(number_spell_words(as.double(.)))),., perl = TRUE) } )
+                        tokens[i] %<>% gsub( "([0-9]){1,}" , names(toWords(.)),., perl = TRUE) } )
                                               stri_flatten( tokens, collapse = " ") -> x }
 } , options = list( optimize = 3) )
   
