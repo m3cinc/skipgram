@@ -10,6 +10,8 @@
 #' toCurrency('-2349.03',FALSE,'fr') returns the num -2349.03 named "moins deux mille trois cent quarante-neuf euros" 
 toCurrency <- compiler::cmpfun (function (x, convert_fraction = TRUE, locale='en_US') {
         stopifnot(is.character(x))
+        toCurrency_fr <- skipgram::toCurrency_fr
+        toCurrency_en_US <- skipgram::toCurrency_en_US
         locale.abb <- c('en_US','fr')
         locale.currency <- c('USD','EUR')
         localized <- data.frame(locale=locale.abb,currency=locale.currency,stringsAsFactors=FALSE)

@@ -11,6 +11,8 @@
 #' toWords('-24123.45',TRUE,'fr') returns the num -24123.45 named "moins vingt-quatre mille cent vingt-trois et quarante-cinq parties decimales" 
 toWords <- compiler::cmpfun (function (x, convert_fraction = FALSE, locale='en_US') {
         stopifnot(is.character(x))
+        toWords_fr <- skipgram::toWords_fr
+        toWords_en_US <- skipgram::toWords_en_US
         locale.abb <- c('en_US','fr')
         stopifnot(locale %in% locale.abb)
         separator <- ' '
