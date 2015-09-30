@@ -17,7 +17,7 @@ skip_ngram <- compiler::cmpfun (function( x,  n = 1L, skip = 0L, cflag = FALSE, 
         stri_join <- stringi::stri_join  
         options <- stringi::stri_opts_brkiter( type = "word", skip_word_none = TRUE, skip_word_number = FALSE )
         tokens <- unlist( stri_split_boundaries( x, opts_brkiter = options ) )          # Split into word tokens
-        if (length ( filter > 0L ) ) { tokens <- tokens[ !tokens %in% filters ] }       # filters designated vocabulary
+        if (length ( filters > 0L ) ) { tokens <- tokens[ !tokens %in% filters ] }       # filters designated vocabulary
         # if we didn't detect any words or number of tokens is less than n return empty vector 
         if ( all( is.na( tokens )) || length( tokens ) < n + skip ) { character(0) } else { 
         if ( skip == 0L) { sapply(1:( length( tokens ) - n - 1L ),       function(i) stri_join( tokens[i:(i + n - 1L)], collapse = " "))} else {
