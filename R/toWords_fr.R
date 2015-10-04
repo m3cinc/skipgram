@@ -39,7 +39,7 @@ toWords_fr <- compiler::cmpfun (function (number, p = 0, powsuffix = '') {
                            'octononagintillion','novemnonagintillion','centillion')
         exponent <- setNames(exponent.int,exponent.name)
         digits.int <- c(0:9)
-        digits.name <-c ('zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf')
+        digits.name <-c ('zero', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf')
         digits <- setNames(digits.int,digits.name)
         infinity <- 'infini'
         and_<- 'et'

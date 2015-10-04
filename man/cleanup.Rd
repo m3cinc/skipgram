@@ -13,7 +13,7 @@ cleanup(x)
 cleanup.R
 }
 \examples{
-cleanup(as.character(citation()) cleans and substitute citation()
+cleanup(as.character(citation)) cleans and substitute citation()
 cleanup(string) cleans and substitute string
 }
 

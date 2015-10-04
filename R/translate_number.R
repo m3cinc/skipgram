@@ -4,7 +4,6 @@
 #' translate_number( as.character( citation() ) ) substitutes number with spelled value
 translate_number <- compiler::cmpfun(function ( x ) { 
         stopifnot( is.character( x ) )
-        #' To avoid :: calls 
         stri_split_boundaries <- stringi::stri_split_boundaries 
         stri_join <- stringi::stri_join  
         stri_flatten <- stringi::stri_flatten

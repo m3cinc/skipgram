@@ -24,7 +24,7 @@ skip_ngram as named integer vector x
 skip_ngram
 }
 \examples{
-skip_ngram(as.character(citation())) produces a unigram of citation in list x
+skip_ngram(as.character(citation)) produces a unigram of citation in list x
 skip_ngram(string,3L) produces trigram of string in list x
 skip_ngram(string,2L,3L,1L,badwords) produces skip3-bigram in list x corresponding to [word X X X word] from a compressed list, excludes tokens in badwords list
 }

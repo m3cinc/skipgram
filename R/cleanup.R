@@ -1,7 +1,7 @@
 #' cleanup.R
 #' @param x character
 #' @examples 
-#' cleanup(as.character(citation()) cleans and substitute citation()
+#' cleanup(as.character(citation)) cleans and substitute citation()
 #' cleanup(string) cleans and substitute string
 
 cleanup <- compiler::cmpfun (function (x) {

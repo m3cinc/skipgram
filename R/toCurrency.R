@@ -26,4 +26,4 @@ toCurrency <- compiler::cmpfun (function (x, convert_fraction = TRUE, locale='en
                 'en_US' = { if (nchar( decimal) > 0 )  { ret <- paste0( toCurrency_en_US(decimal, fraction, 'USD', convert_fraction ) ) } })
         x <- setNames(as.numeric(x), ret)
         return(x)
-}, options = list( optimize = 3) )
+} , options = list( optimize = 3) )

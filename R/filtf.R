@@ -8,5 +8,5 @@ filtf <- compiler::cmpfun( function ( x, f) {
         stopifnot ( is.character(x), is.character(f) )
         filts <- skipgram::filts
         x <- pbsapply(1:length(x), function(i){x[i] %<>% filts(f)})
-        return(x)
+        return (x)
 } , options = list( optimize = 3) )         

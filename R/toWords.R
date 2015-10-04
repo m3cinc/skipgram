@@ -25,5 +25,5 @@ toWords <- compiler::cmpfun (function (x, convert_fraction = FALSE, locale='en_U
                 'en_US' = { if (nchar( decimal) > 0 )  { ret <- paste0( toWords_en_US(decimal)) }
                             if (nchar( fraction) > 0 ) { if (convert_fraction != FALSE) { ret <- paste0( ret, ' and ', toWords_en_US(fraction),' decimal parts' ) } } } )
         x <- setNames(as.numeric(x),ret)
-        return(x)
+        return (x)
 }, options = list( optimize = 3) )

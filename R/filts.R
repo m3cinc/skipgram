@@ -9,5 +9,5 @@ filts <- compiler::cmpfun( function ( x, f) {
         for (i in 1:length(f)) {
                 regex <- paste0( '^(', f[i] , ' )|( +' , f[i] , '\\b)' )
                 x %<>% gsub(regex,'',.,ignore.case=TRUE,perl=TRUE,useBytes=TRUE) }
-        return(x)
+        return (x)
 } , options = list( optimize = 3) )         

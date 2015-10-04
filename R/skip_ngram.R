@@ -6,7 +6,7 @@
 #' @param filters is an optional character vector dictionary of tokens to exclude, omit if not supplied 
 #' @return skip_ngram as named integer vector x 
 #' @examples 
-#' skip_ngram(as.character(citation())) produces a unigram of citation in list x
+#' skip_ngram(as.character(citation)) produces a unigram of citation in list x
 #' skip_ngram(string,3L) produces trigram of string in list x
 #' skip_ngram(string,2L,3L,1L,badwords) produces skip3-bigram in list x corresponding to [word X X X word] from a compressed list, excludes tokens in badwords list
 skip_ngram <- compiler::cmpfun (function( x,  n = 1L, skip = 0L, cflag = FALSE, filters = NULL) {
